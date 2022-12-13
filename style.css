@@ -1,122 +1,167 @@
 :root {
-    --very-dark-blue: hsl(240, 100%, 5%);
-    --dark-grayish-blue: hsl(236, 13%, 42%);
-    --grayish-blue: hsl(233, 8%, 79%);
-    --off-white: hsl(36, 100%, 99%);
+  --very-dark-blue: hsl(240, 100%, 5%);
+  --dark-grayish-blue: hsl(236, 13%, 42%);
+  --grayish-blue: hsl(233, 8%, 79%);
+  --off-white: hsl(36, 100%, 99%);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.938rem;
-    padding: 2.5rem 2rem;
-    background-color: hsl(36, 100%, 99%);;
+  font-family: "Inter", sans-serif;
+  font-size: 0.938rem;
+  padding: 2.5rem 1rem;
+  background-color: hsl(36, 100%, 99%);
 }
 
 nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
-    color: var(--very-dark-blue);
+  text-decoration: none;
+  color: var(--very-dark-blue);
 }
 
 .active {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 p {
-    color: var(--grayish-blue);
+  color: var(--dark-grayish-blue);
 }
 
-h1, h3 {
-    color: var(--very-dark-blue);
+h1,
+h3 {
+  color: var(--very-dark-blue);
 }
 
 main img {
-    width: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .desktop-nav {
-    display: none;
+  display: none;
 }
 
 .menu-btn {
-    z-index: 2;
-    background: none;
-    border: none;
-    cursor: pointer;
+  z-index: 2;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: var(--off-white);
-    overflow-x: hidden;
-    padding-top: 8.75rem;
-    padding-left: 2rem;
-    transition: 0.5s;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: var(--off-white);
+  overflow-x: hidden;
+  padding-top: 8.75rem;
+  transition: 0.5s;
 }
 
 li {
-    padding: 0.6rem 0;
+  padding: 0.6rem 0;
 }
 
 .desktop-image {
-    display: none;
+  display: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 main {
-    display: grid; 
-    grid-template-columns: 1fr; 
-    grid-template-rows: 1fr 1fr 1fr; 
-    gap: 3em 0em; 
-    grid-template-areas: 
-        "main-article"
-        "new-articles"
-        "top-articles"; 
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3em 0em;
+  grid-template-areas:
+    "main-article"
+    "new-articles"
+    "top-articles";
 }
 
-.main-article { grid-area: main-article; }
+.main-article {
+  grid-area: main-article;
+  align-items: flex-start;
+}
 
-.new-articles { grid-area: new-articles; }
+.main-article * {
+  margin: 0.5rem 0;
+}
 
-.top-articles { grid-area: top-articles; }
+.main-article img {
+  margin-top: 0;
+}
 
+.new-articles {
+  grid-area: new-articles;
+}
 
+.top-articles {
+  grid-area: top-articles;
+}
 
+h1 {
+  font-size: 2.8rem;
+  letter-spacing: -2px;
+  line-height: 46px;
+  font-weight: 800;
+}
+
+button {
+  padding: 0.8rem 3rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 5px;
+  background-color: #f15d51;
+  color: var(--off-white);
+  border: 1px solid #f15d51;
+  cursor: pointer;
+}
 
 @media screen and (min-width: 700px) {
-    main {
-        display: grid; 
-        grid-template-columns: 1fr 1fr 1fr; 
-        grid-template-rows: 1.5fr 0.5fr; 
-        gap: 4em 2em; 
-        grid-template-areas: 
-            "main-article main-article new-articles"
-            "top-articles top-articles top-articles";
-    }
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1.5fr 0.5fr;
+    gap: 4em 2em;
+    grid-template-areas:
+      "main-article main-article new-articles"
+      "top-articles top-articles top-articles";
+  }
 
-    .main-article { grid-area: main-article; }
+  .main-article {
+    grid-area: main-article;
+  }
 
-    .new-articles { grid-area: new-articles; }
+  .new-articles {
+    grid-area: new-articles;
+  }
 
-    .top-articles { grid-area: top-articles; }
+  .top-articles {
+    grid-area: top-articles;
+  }
 }

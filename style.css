@@ -261,6 +261,14 @@ strong a:hover {
     grid-area: top-articles;
   }
 
+  .top-article {
+    width: 100%;
+  }
+
+  .top-article img {
+    object-fit: cover;
+  }
+
   .article-texts {
     justify-content: flex-start;
   }

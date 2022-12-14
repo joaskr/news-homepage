@@ -353,11 +353,11 @@ strong a:hover {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    font-size: 1.1rem;
   }
 
   .main-article-text p {
     margin: 0;
+    line-height: 25px;
   }
 
   .main-article-text button {

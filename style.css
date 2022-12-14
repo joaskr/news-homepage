@@ -110,12 +110,8 @@ main {
   align-items: flex-start;
 }
 
-.main-article * {
-  margin: 0.5rem 0;
-}
-
 .main-article img {
-  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
 h1 {
@@ -123,6 +119,11 @@ h1 {
   letter-spacing: -2px;
   line-height: 46px;
   font-weight: 800;
+  margin: 0.5rem 0;
+}
+
+.main-article p {
+  margin: 0.5rem 0;
 }
 
 .main-article button {
@@ -136,6 +137,7 @@ h1 {
   color: var(--off-white);
   border: 1px solid var(--soft-red);
   cursor: pointer;
+  margin-top: 0.5rem;
 }
 
 .main-article button:hover {
@@ -161,13 +163,16 @@ h2 {
   cursor: pointer;
 }
 
-.new-articles h3:hover {
-  color: var(--soft-orange);
+.new-article-header {
+  margin-bottom: 1rem;
 }
 
-.new-article-header {
+.new-article-header a {
   color: var(--off-white);
-  margin-bottom: 1rem;
+}
+
+.new-article-header a:hover {
+  color: var(--soft-orange);
 }
 
 .new-article-text {
@@ -210,14 +215,62 @@ strong {
   color: var(--very-dark-blue);
   font-size: 1.1rem;
   font-weight: 800;
-  cursor: pointer;
 }
 
-strong:hover {
+strong a {
+  color: var(--very-dark-blue);
+}
+
+strong a:hover {
   color: var(--soft-red);
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 600px) {
+  .menu-btn {
+    display: none;
+  }
+
+  .desktop-nav {
+    display: flex;
+  }
+
+  .menu-link {
+    margin: 0 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .menu-link:hover {
+    color: var(--soft-orange);
+  }
+
+  .menu-link:last-child {
+    margin: 0 0 0 1.5rem;
+  }
+
+  .mobile-image {
+    display: none;
+  }
+
+  .desktop-image {
+    display: block;
+    max-height: 250px;
+    margin-bottom: 2rem;
+  }
+
+  .top-articles {
+    grid-area: top-articles;
+  }
+
+  .article-texts {
+    justify-content: flex-start;
+  }
+
+  .article-texts * {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 1100px) {
   body {
     display: flex;
     flex-direction: column;
@@ -262,7 +315,8 @@ strong:hover {
 
   .desktop-image {
     display: block;
-    max-height: 275px;
+    max-height: 250px;
+    margin-bottom: 2rem;
   }
 
   main {
@@ -289,16 +343,41 @@ strong:hover {
   .main-article-texts h1 {
     width: 45%;
     font-size: 3.5rem;
-    line-height: 55px;
+    line-height: 60px;
     margin: 0;
   }
 
   .main-article-text {
     width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 1.1rem;
+  }
+
+  .main-article-text p {
+    margin: 0;
+  }
+
+  .main-article-text button {
+    margin-top: 0;
+  }
+
+  .main-article img {
+    margin-bottom: 2rem;
   }
 
   .new-articles {
     grid-area: new-articles;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
   }
 
   .top-articles {

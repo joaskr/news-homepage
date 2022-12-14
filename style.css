@@ -40,6 +40,7 @@ a {
 
 .active {
   font-weight: 600;
+  color: var(--soft-orange);
 }
 
 p {
@@ -137,6 +138,11 @@ h1 {
   cursor: pointer;
 }
 
+.main-article button:hover {
+  background-color: var(--very-dark-blue);
+  border: 1px solid var(--very-dark-blue);
+}
+
 .new-articles {
   grid-area: new-articles;
   background-color: var(--very-dark-blue);
@@ -150,8 +156,13 @@ h2 {
   font-weight: 800;
 }
 
-h3 {
+.new-articles h3 {
   font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.new-articles h3:hover {
+  color: var(--soft-orange);
 }
 
 .new-article-header {
@@ -199,17 +210,10 @@ strong {
   color: var(--very-dark-blue);
   font-size: 1.1rem;
   font-weight: 800;
+  cursor: pointer;
 }
 
-footer {
-  margin-top: 2rem;
-}
-
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-.attribution a {
+strong:hover {
   color: var(--soft-red);
 }
 
@@ -217,23 +221,50 @@ footer {
   body {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
   }
+
   main {
     max-width: 1200px;
   }
+
   nav {
     max-width: 1200px;
     margin: 0;
+    margin-bottom: 3rem;
   }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .desktop-nav {
+    display: flex;
+  }
+
+  .menu-link {
+    margin: 0 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .menu-link:hover {
+    color: var(--soft-orange);
+  }
+
+  .menu-link:last-child {
+    margin: 0 0 0 1.5rem;
+  }
+
   .mobile-image {
     display: none;
   }
+
   .desktop-image {
     display: block;
     max-height: 275px;
   }
+
   main {
     display: grid;
     grid-template-columns: repeat(2, 1fr) 1fr;
@@ -248,6 +279,24 @@ footer {
     grid-area: main-article;
   }
 
+  .main-article-texts {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+  }
+
+  .main-article-texts h1 {
+    width: 45%;
+    font-size: 3.5rem;
+    line-height: 55px;
+    margin: 0;
+  }
+
+  .main-article-text {
+    width: 45%;
+  }
+
   .new-articles {
     grid-area: new-articles;
   }
@@ -255,9 +304,5 @@ footer {
   .top-articles {
     grid-area: top-articles;
     flex-direction: row;
-  }
-
-  footer {
-    margin: 0;
   }
 }
